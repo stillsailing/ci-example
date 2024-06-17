@@ -1,10 +1,14 @@
 pipeline {
     agent { docker 'node:18' }
     stages {
+        stage('install') {
+            steps {
+                sh 'npm ci'
+            }
+        }
         stage('build') {
             steps {
-                sh 'echo "Building..."'
-                sh 'npm --version'
+                sh 'npm run build'
             }
         }
     }
