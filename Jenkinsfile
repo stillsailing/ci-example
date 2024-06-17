@@ -1,5 +1,5 @@
 pipeline {
-    agent { nodejs '18' }
+    agent any
     environment {
         CI = 'true' 
     }
