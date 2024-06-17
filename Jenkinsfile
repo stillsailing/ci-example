@@ -17,7 +17,7 @@ pipeline {
         stage('deploy') {
             steps {
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
-                echo 'deploy_path: ${env.DEPLOY_PATH}'
+                echo "deploy_path: ${env.DEPLOY_PATH}"
             }
         }
     }
