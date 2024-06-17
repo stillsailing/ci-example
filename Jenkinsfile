@@ -16,7 +16,7 @@ pipeline {
         }
         stage('deploy') {
             steps {
-                sh 'echo deplo_path: ${env.DEPLO_PATH}'
+                echo 'deplo_path: ${env.DEPLO_PATH}'
             }
         }
     }
