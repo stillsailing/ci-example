@@ -1,4 +1,4 @@
-import { Base, StreamerMethod, filterAction, reduceFromPayload } from 'observable-duck'
+import { Base, Init, StreamerMethod, filterAction, reduceFromPayload } from 'observable-duck'
 import { Observable } from 'rxjs'
 import { Action } from 'redux'
 
@@ -39,5 +39,9 @@ export default class AppDuck extends AppBase {
       ...super.quickTypes,
       ...Type,
     };
+  }
+  @Init()
+  apply() {
+    this.dispatch({ type: this.types.UPDATE, payload: Date.now() })
   }
 }

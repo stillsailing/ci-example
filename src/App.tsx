@@ -5,11 +5,12 @@ import RegisteredRouter from '@src/routes/RegisteredRouter'
 import AppMenu from './components/layout/Menu'
 import { Layout, Flex } from 'antd'
 import './app.css'
+import logger from './plugin/logger'
 
 const { Header, Footer, Content } = Layout
 
 export default function App() {
-  const { duck, store, dispatch } = useDuck(AppDuck)
+  const { duck, store, dispatch } = useDuck(AppDuck, { middlewares: [logger] })
   return (
     <Flex justify='center'>
       <Layout className='app-layout'>
@@ -19,7 +20,7 @@ export default function App() {
         <Content className='app-content'>
           <RegisteredRouter />
         </Content>
-        <Footer className='app-footer'>Footer</Footer>
+        <Footer className='app-footer'>Footer {store.stamp}</Footer>
       </Layout>
     </Flex>
   )

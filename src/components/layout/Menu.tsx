@@ -1,7 +1,7 @@
 import * as React from 'react'
 import type { MenuProps } from 'antd'
 import { Menu } from 'antd'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 const items: MenuProps['items'] = [
   {
@@ -23,7 +23,8 @@ const items: MenuProps['items'] = [
 ]
 
 const AppMenu: React.FC = () => {
-  const [current, setCurrent] = React.useState('main')
+  const location = useLocation()
+  const [current, setCurrent] = React.useState(location.pathname.slice(1))
   const onClick: MenuProps['onClick'] = (e) => {
     setCurrent(e.key)
   }
