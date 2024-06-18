@@ -20,7 +20,7 @@ export default function App() {
         <Content className='app-content'>
           <RegisteredRouter />
         </Content>
-        <Footer className='app-footer'>Footer {store.stamp}</Footer>
+        <Footer className='app-footer'>Footer timestamp {store.stamp}</Footer>
       </Layout>
     </Flex>
   )
