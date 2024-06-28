@@ -24,7 +24,7 @@ const items: MenuProps['items'] = [
 
 const AppMenu: React.FC = () => {
   const location = useLocation()
-  const [current, setCurrent] = React.useState(location.pathname.slice(1))
+  const [current, setCurrent] = React.useState(location.pathname.slice(1) || 'main')
   const onClick: MenuProps['onClick'] = (e) => {
     setCurrent(e.key)
   }
